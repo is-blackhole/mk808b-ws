@@ -11,6 +11,8 @@ install_twisted_reactor()
 from twisted.python import log
 from twisted.internet import reactor
 
+__version__ = '0.1'
+
 log.startLogging(sys.stdout)
 kivy.require('1.7.2')  # replace with your current kivy version !
 
@@ -51,7 +53,7 @@ class MyApp(App):
         reactor.connectTCP("127.0.0.1", 9000, factory)
 
     def print_message(self, msg):
-        self.label.text += msg + "\n"
+        self.label.text += "\n" + msg
 
 if __name__ == '__main__':
     MyApp().run()
